@@ -1,5 +1,5 @@
 # Build .NET API
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet-build
+FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS dotnet-build
 WORKDIR /app
 COPY ./TechSpeck/ ./TechSpeck/
 RUN dotnet publish ./TechSpeck/TechSpeck.API -c Release -o out
@@ -11,7 +11,7 @@ COPY ./node-api/ .
 RUN npm install
 
 # Final image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
 # Copy .NET
