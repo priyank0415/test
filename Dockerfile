@@ -26,8 +26,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
 # Expose ports
-EXPOSE 5226  # .NET API port
-EXPOSE 3000  # Node.js API port
+# .NET API port
+EXPOSE 5226
+# Node.js API port
+EXPOSE 3000
 
 # Create startup script
 RUN echo '#!/bin/bash\n\
